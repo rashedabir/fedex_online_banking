@@ -9,7 +9,9 @@ export const DataProvider = ({ children }) => {
   const [token, setToken] = useState(false);
 
   const refreshToken = async () => {
-    const res = await axios.get("/user/refresh_token");
+    const res = await axios.get(
+      "https://fedex-bank.herokuapp.com/user/refresh_token"
+    );
     setToken(res.data.accessToken);
   };
 

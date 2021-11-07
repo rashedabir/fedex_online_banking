@@ -11,9 +11,12 @@ function UserAPI(token) {
     if (token) {
       const getUser = async () => {
         try {
-          const res = await axios.get("/user/infor", {
-            headers: { Authorization: token },
-          });
+          const res = await axios.get(
+            "https://fedex-bank.herokuapp.com/user/infor",
+            {
+              headers: { Authorization: token },
+            }
+          );
           setIsLogged(true);
           res.data.user.role === 1 ? setIsAdmin(true) : setIsAdmin(false);
         } catch (error) {

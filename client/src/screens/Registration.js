@@ -60,7 +60,7 @@ function Registration() {
       },
     ]);
     try {
-      await axios.post("/user/register", {
+      await axios.post("https://fedex-bank.herokuapp.com/user/register", {
         name: firstName + " " + lastName,
         email: email,
         mobile: mobile,

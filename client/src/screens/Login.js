@@ -9,7 +9,7 @@ function Login() {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/user/login", {
+      await axios.post("https://fedex-bank.herokuapp.com/user/login", {
         email: email,
         password: password,
       });

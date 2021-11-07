@@ -36,7 +36,10 @@ function Step8({
       let formData = new FormData();
       formData.append("file", file);
       setLoading1(true);
-      const res = await axios.post("/api/upload", formData);
+      const res = await axios.post(
+        "https://fedex-bank.herokuapp.com/api/upload",
+        formData
+      );
       setLoading1(false);
       setSelfie(res.data);
     } catch (error) {
@@ -51,7 +54,10 @@ function Step8({
       let formData = new FormData();
       formData.append("file", file);
       setLoading2(true);
-      const res = await axios.post("/api/upload", formData);
+      const res = await axios.post(
+        "https://fedex-bank.herokuapp.com/api/upload",
+        formData
+      );
       setLoading2(false);
       setFront(res.data);
     } catch (error) {
@@ -66,7 +72,10 @@ function Step8({
       let formData = new FormData();
       formData.append("file", file);
       setLoading3(true);
-      const res = await axios.post("/api/upload", formData);
+      const res = await axios.post(
+        "https://fedex-bank.herokuapp.com/api/upload",
+        formData
+      );
       setLoading3(false);
       setBack(res.data);
     } catch (error) {
@@ -77,7 +86,7 @@ function Step8({
   const handleDestroySelfie = async () => {
     try {
       setLoading1(true);
-      await axios.post("/api/destroy", {
+      await axios.post("https://fedex-bank.herokuapp.com/api/destroy", {
         public_id: selfiePic.public_id,
       });
       setLoading1(false);
@@ -90,7 +99,7 @@ function Step8({
   const handleDestroyFront = async () => {
     try {
       setLoading2(true);
-      await axios.post("/api/destroy", {
+      await axios.post("https://fedex-bank.herokuapp.com/api/destroy", {
         public_id: front.public_id,
       });
       setLoading2(false);
@@ -103,7 +112,7 @@ function Step8({
   const handleDestroyBack = async () => {
     try {
       setLoading3(true);
-      await axios.post("/api/destroy", {
+      await axios.post("https://fedex-bank.herokuapp.com/api/destroy", {
         public_id: back.public_id,
       });
       setLoading3(false);

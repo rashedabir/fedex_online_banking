@@ -8,9 +8,12 @@ function CustomersAPI(token) {
   useEffect(() => {
     if (token) {
       const getUsers = async () => {
-        const res = await axios.get("/user/users", {
-          headers: { Authorization: token },
-        });
+        const res = await axios.get(
+          "https://fedex-bank.herokuapp.com/user/users",
+          {
+            headers: { Authorization: token },
+          }
+        );
         setCustomers(res.data.users);
       };
       getUsers();

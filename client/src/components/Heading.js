@@ -10,7 +10,7 @@ function Heading() {
   const [isAdmin, setIsAdmin] = state.userAPI.isAdmin;
 
   const logOut = async () => {
-    await axios.get("/user/logout");
+    await axios.get("https://fedex-bank.herokuapp.com/user/logout");
     setIsAdmin(false);
     setIsLogged(false);
     window.location.href = "/";
@@ -49,48 +49,6 @@ function Heading() {
               <NavLink className="nav-link" to="/aboutus">
                 Who we are
               </NavLink>
-            </li>
-            <li className="nav-item dropdown">
-              <NavLink
-                className="nav-link dropdown-toggle"
-                to="/"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Learn
-              </NavLink>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <Link className="dropdown-item" to="/blog">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/help">
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/faqs">
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/onlinebanking">
-                    Online Banking
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/mobilebanking">
-                    Mobile Banking
-                  </Link>
-                </li>
-              </ul>
             </li>
           </ul>
           <div className="ms-auto d-flex align-items-center">

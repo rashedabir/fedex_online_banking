@@ -10,6 +10,9 @@ import CustomerDetails from "./screens/CustomerDetails";
 import Benefits from "./screens/Benefits";
 import Accounts from "./screens/Accounts";
 import AboutUs from "./screens/AboutUs";
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
