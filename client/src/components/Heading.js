@@ -1,8 +1,21 @@
-import React from "react";
+import axios from "axios";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import GlobalState from "../GlobalState";
 
 function Heading() {
+  const state = useContext(GlobalState);
+  const [isLogged, setIsLogged] = state.userAPI.isLogged;
+  const [isAdmin, setIsAdmin] = state.userAPI.isAdmin;
+
+  const logOut = async () => {
+    await axios.get("/user/logout");
+    setIsAdmin(false);
+    setIsLogged(false);
+    window.location.href = "/";
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -80,13 +93,26 @@ function Heading() {
               </ul>
             </li>
           </ul>
-          <div className="ms-auto">
-            <Link to="/login" className="login_btn">
-              Log in
-            </Link>
-            <Link to="/register" className="btn register_btn">
-              Get Started
-            </Link>
+          <div className="ms-auto d-flex align-items-center">
+            {isAdmin ? (
+              <NavLink className="nav-link" to="/customers">
+                Lists
+              </NavLink>
+            ) : null}
+            {isLogged ? (
+              <button className="btn btn-outline-danger" onClick={logOut}>
+                Log out
+              </button>
+            ) : (
+              <>
+                <Link to="/login" className="login_btn">
+                  Log in
+                </Link>
+                <Link to="/register" className="btn register_btn">
+                  Get Started
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

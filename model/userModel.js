@@ -47,6 +47,11 @@ const userSchema = new mongoose.Schema(
       require: true,
       trim: true,
     },
+    incomeSource: {
+      type: String,
+      require: true,
+      trim: true,
+    },
     work: {
       type: String,
       require: true,

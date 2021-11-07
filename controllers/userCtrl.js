@@ -1,4 +1,4 @@
-const User = require("../models/userModel");
+const User = require("../model/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -15,6 +15,7 @@ const userCtrl = {
         city,
         state,
         security,
+        incomeSource,
         work,
         about,
         password,
@@ -30,6 +31,7 @@ const userCtrl = {
         !city ||
         !state ||
         !security ||
+        !incomeSource ||
         !work ||
         !about ||
         !password
@@ -54,6 +56,7 @@ const userCtrl = {
         city,
         state,
         security,
+        incomeSource,
         work,
         about,
         nid,

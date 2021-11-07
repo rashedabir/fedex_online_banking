@@ -6,6 +6,11 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* background-color: whitesmoke; */
+}
+
+ul li {
+  list-style: none;
 }
 
 /*------------------------header-------------------------*/
@@ -60,4 +65,134 @@ body {
 .form-control:focus {
   box-shadow: none;
   border: 2px solid #3f077e;
+}
+
+/*---------------------registration----------------------*/
+
+.form {
+  max-width: 550px;
+  background-color: whitesmoke;
+  padding: 30px;
+  border-radius: 10px;
+}
+.nextbtn {
+  background-color: #40008a;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 25px;
+  font-size: 18px;
+}
+.nextbtn:hover {
+  color: #fff;
+  background-color: #3f077e;
+}
+.notice {
+  font-size: 12px;
+  text-align: center;
+}
+
+.id_text {
+  color: #4990ec;
+}
+
+/*---------------------images-------------------------------*/
+
+.upload_selfie {
+  max-width: 150px;
+  height: 150px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  position: relative;
+}
+#file_up_selfie {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+#file_up_selfie::before {
+  content: "+";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #eee;
+  color: #217c7c;
+  font-size: 6rem;
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+}
+#file_img_selfie {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+}
+#file_img_selfie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#file_img_selfie span {
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 800;
+  color: crimson;
+}
+
+.paginationBttns {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+}
+
+.paginationBttns a {
+  display: block;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 5px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+  background-color: white;
+}
+
+.paginationBttns a:hover {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationActive a {
+  color: white !important;
+  background-color: #2b2eff;
+}
+
+.paginationDisabled a {
+  color: grey;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.heading {
+  font-weight: 700;
 }
