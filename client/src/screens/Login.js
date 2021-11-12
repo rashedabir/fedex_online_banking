@@ -13,7 +13,8 @@ function Login() {
         email: email,
         password: password,
       });
-      window.location.href = "/";
+      toast.success("Wellcome.");
+      window.location.href = "/review";
     } catch (error) {
       toast.error(error.response.data.msg);
     }

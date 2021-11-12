@@ -77,6 +77,7 @@ function Registration() {
         nid: nid,
       });
       toast.success("Registration Complete.");
+      window.location.href = "/review";
     } catch (error) {
       toast.error(error.response.data.msg);
     }

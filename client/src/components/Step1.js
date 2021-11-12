@@ -12,7 +12,8 @@ function Step1({
   return (
     <div className="container">
       <form className="form mx-auto my-5 p-5" onSubmit={increseStep}>
-        <h2>Hi, what’s your name?</h2>
+        <h2 className="pb-2">Sign up and get 25$</h2>
+        <h3>Hi, what’s your name?</h3>
         <p className="pb-2">
           We need your legal name to create your new Fedex account.
         </p>
